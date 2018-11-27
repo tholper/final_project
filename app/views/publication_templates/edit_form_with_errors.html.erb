@@ -1,0 +1,41 @@
+<!-- Validation failure messages -->
+<% if @publication.errors.any? %>
+  <% @publication.errors.full_messages.each do |message| %>
+    <div class="alert">
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<h1>
+  Edit publication #<%= @publication.id %>
+</h1>
+
+<hr>
+
+<!-- Form publication start -->
+<form action="/update_publication/<%= @publication.id %>" method="post">
+<!-- Form publication end -->
+
+  <!-- Label and input for publication_id start -->
+  <div class="form-group">
+    <label for="publication_id">
+      Publication
+    </label>
+
+    <!-- Input for publication_id start -->
+    <input type="text" id="publication_id" name="publication_id" class="form-control" value="<%= @publication.publication_id %>">
+    <!-- Input for publication_id end -->
+  </div>
+  <!-- Label and input for publication_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update publication
+  </button>
+</form>
+
+<hr>
+
+<a href="/publications">
+  Go back
+</a>

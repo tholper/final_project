@@ -1,0 +1,64 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Publication #<%= @publication.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/publications" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link publication start -->
+      <div class="col">
+        <a href="/publications/<%= @publication.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit publication
+        </a>
+      </div>
+      <!-- Edit link publication end -->
+
+      <!-- Delete link publication start -->
+      <div class="col">
+        <a href="/delete_publication/<%= @publication.id %>" class="btn btn-block btn-outline-secondary">
+          Delete publication
+        </a>
+      </div>
+      <!-- Delete link publication end -->
+    </div>
+
+    <dl>
+      <dt>
+        Publication
+      </dt>
+      <!-- Display publication_id start -->
+      <dd>
+        <%= @publication.publication_id %>
+      </dd>
+      <!-- Display publication_id end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@publication.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@publication.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->

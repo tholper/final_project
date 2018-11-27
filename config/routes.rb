@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Publication resource:
+
+  # CREATE
+  get("/publications/new", { :controller => "publications", :action => "new_form" })
+  post("/create_publication", { :controller => "publications", :action => "create_row" })
+
+  # READ
+  get("/publications", { :controller => "publications", :action => "index" })
+  get("/publications/:id_to_display", { :controller => "publications", :action => "show" })
+
+  # UPDATE
+  get("/publications/:prefill_with_id/edit", { :controller => "publications", :action => "edit_form" })
+  post("/update_publication/:id_to_modify", { :controller => "publications", :action => "update_row" })
+
+  # DELETE
+  get("/delete_publication/:id_to_remove", { :controller => "publications", :action => "destroy_row" })
+
+  #------------------------------
+
   devise_for :users
   # Routes for the User resource:
 
