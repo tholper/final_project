@@ -16,7 +16,7 @@
     </label>
 
     <!-- Input for publication_id start -->
-    <input type="text" id="publication_id" name="publication_id" class="form-control">
+    <%= select_tag(:publication_id, options_from_collection_for_select(User.all, :id, :email, @publication.publication_id), :class => "form-control") %>
     <!-- Input for publication_id end -->
   </div>
   <!-- Label and input for publication_id end -->
