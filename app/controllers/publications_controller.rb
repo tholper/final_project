@@ -10,7 +10,8 @@ class PublicationsController < ApplicationController
   end
 
   def index
-    @publications = Publication.page(params[:page]).per(10)
+    @q = Publication.ransack(params[:q])
+    @publications = @q.result(:distinct => true).includes(:publication).page(params[:page]).per(10)
 
     render("publication_templates/index.html.erb")
   end
