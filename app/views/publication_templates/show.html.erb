@@ -13,17 +13,21 @@
 
       <!-- Edit link publication start -->
       <div class="col">
-        <a href="/publications/<%= @publication.id %>/edit" class="btn btn-block btn-outline-secondary">
-          Edit publication
-        </a>
+        <% if current_user == @publication.publication %>
+          <a href="/publications/<%= @publication.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
+            Edit publication
+          </a>
+        <% end %>
       </div>
       <!-- Edit link publication end -->
 
       <!-- Delete link publication start -->
       <div class="col">
-        <a href="/delete_publication/<%= @publication.id %>" class="btn btn-block btn-outline-secondary">
-          Delete publication
-        </a>
+        <% if current_user == @publication.publication %>
+          <a href="/delete_publication/<%= @publication.id %>" class="btn btn-block btn-sm btn-outline-secondary">
+            Delete publication
+          </a>
+        <% end %>
       </div>
       <!-- Delete link publication end -->
     </div>
