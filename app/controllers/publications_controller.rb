@@ -10,7 +10,7 @@ class PublicationsController < ApplicationController
   end
 
   def index
-    @publications = Publication.all
+    @publications = Publication.page(params[:page]).per(10)
 
     render("publication_templates/index.html.erb")
   end
