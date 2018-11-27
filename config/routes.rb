@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => "publications#index"
   # Routes for the Publication resource:
 
   # CREATE
