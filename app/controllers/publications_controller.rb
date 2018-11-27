@@ -51,6 +51,14 @@ class PublicationsController < ApplicationController
     end
   end
 
+  def destroy_row_from_publication
+    @publication = Publication.find(params.fetch("id_to_remove"))
+
+    @publication.destroy
+
+    redirect_to("/users/#{@publication.publication_id}", notice: "Publication deleted successfully.")
+  end
+
   def destroy_row
     @publication = Publication.find(params.fetch("id_to_remove"))
 

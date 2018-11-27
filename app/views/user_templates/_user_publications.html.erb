@@ -1,0 +1,23 @@
+<div class="card">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    Publications
+
+    <a data-toggle="collapse" href="#user_publications_new_form">
+      Add publication
+    </a>
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <% @user.publications.each do |publication| %>
+      <li class="list-group-item d-flex align-items-center justify-content-between">
+        <!-- Show link start -->
+        <a href="/publications/<%= publication.id %>">
+          <%= publication.publication_id %>
+        </a>
+        <!-- Show link end -->
+
+      </li>
+    <% end %>
+
+  </ul>
+</div>

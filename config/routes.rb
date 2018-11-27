@@ -18,6 +18,7 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_publication/:id_to_remove", { :controller => "publications", :action => "destroy_row" })
+  get("/delete_publication_from_publication/:id_to_remove", { :controller => "publications", :action => "destroy_row_from_publication" })
 
   #------------------------------
 
