@@ -40,7 +40,7 @@ class PublicationsController < ApplicationController
   def update_row
     @publication = Publication.find(params.fetch("id_to_modify"))
 
-    @publication.publication_id = params.fetch("publication_id")
+    
 
     if @publication.valid?
       @publication.save

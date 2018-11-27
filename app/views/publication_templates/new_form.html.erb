@@ -10,15 +10,9 @@
 <!-- Form publication end -->
 
   <!-- Label and input for publication_id start -->
-  <div class="form-group">
-    <label for="publication_id">
-      Publication
-    </label>
-
-    <!-- Input for publication_id start -->
-    <%= select_tag(:publication_id, options_from_collection_for_select(User.all, :id, :email, @publication.publication_id), :class => "form-control") %>
-    <!-- Input for publication_id end -->
-  </div>
+  <!-- Input for "publication_id" start -->
+  <input type="hidden" name="publication_id" value="<%= current_user.id %>">
+  <!-- Input for "publication_id" end -->
   <!-- Label and input for publication_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
