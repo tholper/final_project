@@ -54,7 +54,11 @@
 
         <!-- Display publication.publication_id start -->
         <td>
-          <%= publication.publication.email %>
+          <% if publication.publication.present? %>
+            <a href="/users/<%= publication.publication.id %>">
+              <%= publication.publication.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display publication.publication_id end -->
 

@@ -38,7 +38,11 @@
       </dt>
       <!-- Display publication_id start -->
       <dd>
-        <%= @publication.publication_id %>
+        <% if @publication.publication.present? %>
+          <a href="/users/<%= @publication.publication_id %>">
+            <%= @publication.publication.email %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display publication_id end -->
 
