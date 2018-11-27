@@ -11,7 +11,6 @@
         </a>
       </div>
 
-      <!-- Edit link publication start -->
       <div class="col">
         <% if current_user == @publication.publication %>
           <a href="/publications/<%= @publication.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
@@ -19,9 +18,7 @@
           </a>
         <% end %>
       </div>
-      <!-- Edit link publication end -->
 
-      <!-- Delete link publication start -->
       <div class="col">
         <% if current_user == @publication.publication %>
           <a href="/delete_publication/<%= @publication.id %>" class="btn btn-block btn-sm btn-outline-secondary">
@@ -29,14 +26,12 @@
           </a>
         <% end %>
       </div>
-      <!-- Delete link publication end -->
     </div>
 
     <dl>
       <dt>
         Publication
       </dt>
-      <!-- Display publication_id start -->
       <dd>
         <% if @publication.publication.present? %>
           <a href="/users/<%= @publication.publication_id %>">
@@ -44,28 +39,21 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display publication_id end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@publication.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@publication.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->

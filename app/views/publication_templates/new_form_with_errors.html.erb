@@ -1,4 +1,3 @@
-<!-- Validation failure messages -->
 <% if @publication.present? %>
   <% if @publication.errors.any? %>
     <% @publication.errors.full_messages.each do |message| %>
@@ -16,15 +15,9 @@
 
 <hr>
 
-<!-- Form publication start -->
 <form action="/create_publication" method="post">
-<!-- Form publication end -->
 
-  <!-- Label and input for publication_id start -->
-  <!-- Input for "publication_id" start -->
   <input type="hidden" name="publication_id" value="<%= current_user.id %>">
-  <!-- Input for "publication_id" end -->
-  <!-- Label and input for publication_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create publication
