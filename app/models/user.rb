@@ -1,6 +1,10 @@
 class User < ApplicationRecord
   # Direct associations
 
+  has_many   :publications,
+             :foreign_key => "publication_id",
+             :dependent => :destroy
+
   # Indirect associations
 
   # Validations
